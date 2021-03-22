@@ -1,0 +1,371 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+    <Configurations>Debug;Release;Testing;Development</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+    <RootNamespace>WBAC.Web.API</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="app.cgh-dev-core-web-api - Web Deploy.config" />
+    <Content Remove="app.cgh-dev-core-web-api-staging - Web Deploy.config" />
+    <Content Remove="app.cgh-web-api - Web Deploy.config" />
+    <Content Remove="app.cgh-web-api-staged - Web Deploy.config" />
+    <Content Remove="app.Debug.config" />
+    <Content Remove="app.Release.config" />
+    <Content Remove="app.Testing.config" />
+    <Content Remove="appsettings.Debug.json" />
+    <Content Remove="appsettings.Development.json" />
+    <Content Remove="appsettings.Release.json" />
+    <Content Remove="appsettings.Testing.json" />
+    <Content Remove="tsconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="appsettings.Debug.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>appsettings.json</DependentUpon>
+    </None>
+    <None Include="appsettings.Development.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>appsettings.json</DependentUpon>
+    </None>
+    <None Include="appsettings.Release.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>appsettings.json</DependentUpon>
+    </None>
+    <None Include="appsettings.Testing.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>appsettings.json</DependentUpon>
+    </None>
+    <None Include="tsconfig.json" />
+    <None Include="swagger.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\Configuration\AzureBlobStorage.json" Link="AzureBlobStorage.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Configuration\AzureBlobStorage.Release.json" Link="AzureBlobStorage.Release.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Configuration\CallHistoryVendor.config" Link="CallHistoryVendor.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\Configuration\DocumentParsing.Debug.json" Link="DocumentParsing.Debug.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>DocumentParsing.json</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Configuration\DocumentParsing.Development.json" Link="DocumentParsing.Development.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>DocumentParsing.json</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Configuration\DocumentParsing.Testing.json" Link="DocumentParsing.Testing.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>DocumentParsing.json</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Configuration\DocumentParsing.json" Link="DocumentParsing.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <Content Include="..\Configuration\DocumentParsing.Release.json" Link="DocumentParsing.Release.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>DocumentParsing.json</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\Configuration\ComplianceReview.config" Link="ComplianceReview.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\Configuration\DistributedCache.config">
+      <Link>DistributedCache.config</Link>
+      <TransformOnBuild>true</TransformOnBuild>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\Configuration\DistributedCache.Debug.config">
+      <Link>DistributedCache.Debug.config</Link>
+      <DependentUpon>DistributedCache.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\DistributedCache.Development.config">
+      <Link>DistributedCache.Development.config</Link>
+      <DependentUpon>DistributedCache.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\DistributedCache.Development.QuickLogin.config">
+      <Link>DistributedCache.Development.QuickLogin.config</Link>
+      <DependentUpon>DistributedCache.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\DistributedCache.Release.config">
+      <Link>DistributedCache.Release.config</Link>
+      <DependentUpon>DistributedCache.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\DistributedCache.Release.QuickLogin.config">
+      <Link>DistributedCache.Release.QuickLogin.config</Link>
+      <DependentUpon>DistributedCache.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\DistributedCache.Testing.config">
+      <Link>DistributedCache.Testing.config</Link>
+      <DependentUpon>DistributedCache.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\DistributedCache.Testing.QuickLogin.config">
+      <Link>DistributedCache.Testing.QuickLogin.config</Link>
+      <DependentUpon>DistributedCache.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\EventGridConfig.config">
+      <Link>EventGridConfig.config</Link>
+      <TransformOnBuild>true</TransformOnBuild>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Configuration\EventGridConfig.Debug.config">
+      <Link>EventGridConfig.Debug.config</Link>
+      <DependentUpon>EventGridConfig.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\EventGridConfig.Development.config">
+      <Link>EventGridConfig.Development.config</Link>
+      <DependentUpon>EventGridConfig.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\EventGridConfig.Development.QuickLogin.config">
+      <Link>EventGridConfig.Development.QuickLogin.config</Link>
+      <DependentUpon>EventGridConfig.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\EventGridConfig.Release.config">
+      <Link>EventGridConfig.Release.config</Link>
+      <DependentUpon>EventGridConfig.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\EventGridConfig.Release.QuickLogin.config">
+      <Link>EventGridConfig.Release.QuickLogin.config</Link>
+      <DependentUpon>EventGridConfig.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\EventGridConfig.Testing.config">
+      <Link>EventGridConfig.Testing.config</Link>
+      <DependentUpon>EventGridConfig.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\EventGridConfig.Testing.QuickLogin.config">
+      <Link>EventGridConfig.Testing.QuickLogin.config</Link>
+      <DependentUpon>EventGridConfig.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="..\Configuration\GearsPrice.cgh-dev-core-web-api - Web Deploy.config" Link="GearsPrice.cgh-dev-core-web-api - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>GearsPrice.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\GearsPrice.cgh-dev-core-web-api-staging - Web Deploy.config" Link="GearsPrice.cgh-dev-core-web-api-staging - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>GearsPrice.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\GearsPrice.cgh-web-api - Web Deploy.config" Link="GearsPrice.cgh-web-api - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>GearsPrice.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\GearsPrice.cgh-web-api-staged - Web Deploy.config" Link="GearsPrice.cgh-web-api-staged - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>GearsPrice.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\GearsPrice.config" Link="GearsPrice.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
+    <None Include="..\Configuration\GearsPrice.Debug.config" Link="GearsPrice.Debug.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>GearsPrice.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\GearsPrice.Development.config" Link="GearsPrice.Development.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>GearsPrice.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\GearsPrice.Release.config" Link="GearsPrice.Release.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>GearsPrice.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\GearsPrice.Testing.config" Link="GearsPrice.Testing.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>GearsPrice.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\GearsPrice.Web API.config" Link="GearsPrice.Web API.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>GearsPrice.config</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\Configuration\PricingReview.config" Link="PricingReview.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="..\Configuration\PricingReview.cgh-dev-core-web-api - Web Deploy.config" Link="PricingReview.cgh-dev-core-web-api - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\PricingReview.cgh-dev-core-web-api-qa - Web Deploy.config" Link="PricingReview.cgh-dev-core-web-api-qa - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\PricingReview.cgh-web-api - Web Deploy.config" Link="PricingReview.cgh-web-api - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\PricingReview.cgh-web-api-staged - Web Deploy.config" Link="PricingReview.cgh-web-api-staged - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\PricingReview.Debug.config" Link="PricingReview.Debug.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\PricingReview.Development.config" Link="PricingReview.Development.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\PricingReview.Development.QuickLogin.config" Link="PricingReview.Development.QuickLogin.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\PricingReview.Release.config" Link="PricingReview.Release.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\PricingReview.Release.QuickLogin.config" Link="PricingReview.Release.QuickLogin.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\PricingReview.Testing.config" Link="PricingReview.Testing.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+    <None Include="..\Configuration\PricingReview.Testing.QuickLogin.config" Link="PricingReview.Testing.QuickLogin.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>PricingReview.config</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="app.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <Content Update="appsettings.json">
+        <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="app.cgh-dev-core-web-api - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>app.config</DependentUpon>
+    </None>
+    <None Include="app.cgh-dev-core-web-api-staging - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>app.config</DependentUpon>
+    </None>
+    <None Include="app.cgh-web-api - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>app.config</DependentUpon>
+    </None>
+    <None Include="app.cgh-web-api-staged - Web Deploy.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>app.config</DependentUpon>
+    </None>
+    <None Include="app.Debug.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>app.config</DependentUpon>
+    </None>
+    <None Include="app.Release.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>app.config</DependentUpon>
+    </None>
+    <None Include="app.Testing.config">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>app.config</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App">
+      <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+      <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Azure.KeyVault" Version="3.0.3" />
+    <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Primitives" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Graph" Version="1.14.0" />
+    <PackageReference Include="Microsoft.VisualStudio.SlowCheetah" Version="3.2.20">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+    <PackageReference Include="NSwag.MSBuild" Version="13.1.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Twilio.AspNet.Core" Version="5.20.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WBAC.AzureAD\WBAC.AzureAD.csproj" />
+    <ProjectReference Include="..\WBAC.EventPublishing.Azure\WBAC.EventPublishing.Azure.csproj" />
+    <ProjectReference Include="..\WBAC.NetCore.Web.Common\WBAC.NetCore.Web.Common.csproj" />
+    <ProjectReference Include="..\WBAC.NetStandard.CloudInterface.Azure\WBAC.NetStandard.CloudInterface.Azure.csproj" />
+    <ProjectReference Include="..\WBAC.NetStandard.Domain\WBAC.NetStandard.Domain.csproj" />
+    <ProjectReference Include="..\WBAC.NetStandard.ServiceLayer.Twilio\WBAC.NetStandard.ServiceLayer.Twilio.csproj" />
+    <ProjectReference Include="..\WBAC.NetStandard.ServiceLayer\WBAC.NetStandard.ServiceLayer.csproj" />
+    <ProjectReference Include="..\WBAC.ServiceLayer.Numonix\WBAC.ServiceLayer.Numonix.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties swagger_1json__JSONSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="NSwag" AfterTargets="Build" Condition="'$(BuildingInsideVisualStudio)' == 'true'">
+    <RemoveDir Directories="$(OutDir)References" />
+    <Copy SourceFiles="@(Reference)" DestinationFolder="$(OutDir)References" />
+    <Exec Command="$(NSwagExe_Core21) run WBAC.NetCore.Web.API.nswag /variables:OutDir=$(OutDir)" />
+  </Target>
+
+  <Target Name="Tsc" AfterTargets="NSwag" Condition="'$(BuildingInsideVisualStudio)' == 'true'">
+    <Exec Command="npm run build" />
+  </Target>
+</Project>
