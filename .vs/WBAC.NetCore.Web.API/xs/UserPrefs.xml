@@ -1,15 +1,10 @@
-﻿<Properties StartupConfiguration="{9A6C636E-AA40-4D8F-A00D-6492E4945CE7}|Default">
+﻿<Properties StartupConfiguration="{2FA7BBDA-C838-4F3D-AF03-D386A5227A45}|Default">
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="WBAC.NetCore.Web.API" expanded="True">
-            <Node name="WBAC.NetCore.Web.API" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" selected="True" />
-              </Node>
-              <Node name="Properties" expanded="True" />
-            </Node>
+          <Node name="WBAC.NetCore.Web.API" expanded="True" selected="True">
+            <Node name="WBAC.NetCore.Web.API" expanded="True" />
           </Node>
         </State>
       </Pad>

@@ -7,7 +7,7 @@
     "WBAC.Web.API": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:7048",
+      "applicationUrl": "http://localhost:25279",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

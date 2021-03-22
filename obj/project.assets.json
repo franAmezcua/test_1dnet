@@ -15524,11 +15524,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/franciscosnyk/Tickets/Repos/9598/WBAC.NetCore.Web.API.csproj",
+      "projectUniqueName": "/Users/franciscosnyk/Tickets/Repos/t_9598/WBAC.NetCore.Web.API.csproj",
       "projectName": "WBAC.NetCore.Web.API",
-      "projectPath": "/Users/franciscosnyk/Tickets/Repos/9598/WBAC.NetCore.Web.API.csproj",
+      "projectPath": "/Users/franciscosnyk/Tickets/Repos/t_9598/WBAC.NetCore.Web.API.csproj",
       "packagesPath": "/Users/franciscosnyk/.nuget/packages/",
-      "outputPath": "/Users/franciscosnyk/Tickets/Repos/9598/obj/",
+      "outputPath": "/Users/franciscosnyk/Tickets/Repos/t_9598/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/franciscosnyk/.config/NuGet/NuGet.Config"
